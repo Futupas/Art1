@@ -1,7 +1,7 @@
 {
-    "name": "node-js-getting-started",
+    "name": "prozhektor-perestroiki",
     "version": "0.3.0",
-    "description": "A sample Node.js app using Express 4",
+    "description": "the art of the future: dynamically generated picture, where everyone changes the picture",
     "engines": {
       "node": "12.x"
     },
@@ -28,4 +28,4 @@
       "express"
     ],
     "license": "MIT"
-  }
+}
