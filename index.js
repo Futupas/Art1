@@ -1,22 +1,22 @@
 'use strict';
 
-import {
-    promises as fs
-} from 'fs';
-import {
-    DOMParser
-} from 'xmldom';
-import * as canvas from 'canvas';
-import fetch from 'node-fetch';
-import Canvg, {
-    presets
-} from 'canvg';
+// import {
+//     promises as fs
+// } from 'fs';
+// import {
+//     DOMParser
+// } from 'xmldom';
+// import * as canvas from 'canvas';
+// import fetch from 'node-fetch';
+// import Canvg, {
+//     presets
+// } from 'canvg';
 
-const preset = presets.node({
-    DOMParser,
-    canvas,
-    fetch
-});
+// const preset = presets.node({
+//     DOMParser,
+//     canvas,
+//     fetch
+// });
 
 
 
@@ -48,17 +48,17 @@ express()
     res.end('Prozhektor perestroiki '+dom.window.document.querySelector("p").textContent);
 })
 .get('/bdddd', (req, res) => {
-    const svg = fs.readFile(input, 'utf8');
-    const canvas = preset.createCanvas(800, 600);
-    const ctx = canvas.getContext('2d');
-    const v = Canvg.fromString(ctx, svg, preset);
+    // const svg = fs.readFile(input, 'utf8');
+    // const canvas = preset.createCanvas(800, 600);
+    // const ctx = canvas.getContext('2d');
+    // const v = Canvg.fromString(ctx, svg, preset);
 
-    // Render only first frame, ignoring animations.
-    v.render();
+    // // Render only first frame, ignoring animations.
+    // v.render();
 
-    const png = canvas.toBuffer();
+    // const png = canvas.toBuffer();
 
-    fs.writeFile(output, png);
+    // fs.writeFile(output, png);
 
 
     res.writeHead(200, {'Content-Type': 'text/plain'});
