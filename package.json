@@ -3,7 +3,7 @@
     "version": "0.3.0",
     "description": "the art of the future: dynamically generated picture, where everyone changes the picture",
     "engines": {
-      "node": "12.x"
+      "node": "11.x"
     },
     "main": "index.js",
     "scripts": {
