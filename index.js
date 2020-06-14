@@ -18,17 +18,17 @@ express()
     res.end('Prozhektor perestroiki b');
 })
 .get('/screen', (req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.writeHead(200, {'Content-Type': 'image/png'});
 
     var webshot = require('webshot');
     var fs      = require('fs');
 
     var renderStream = webshot('google.com');
-    var file = fs.createWriteStream('google.png', {encoding: 'binary'});
+    // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
 
     renderStream.on('data', function(data) {
         console.log(data.toString('binary'));
-        res.end('Prozhektor perestroiki ' + data.toString('binary'));
+        res.end( data.toString('binary'));
     });
 
 
