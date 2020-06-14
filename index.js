@@ -2,6 +2,7 @@ const express = require('express');
 const PORT = process.env.PORT || 5000;
 
 express()
+.use(express.static('static'))
 .get('/', (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Prozhektor perestroiki');
