@@ -19,14 +19,18 @@ express()
 })
 .get('/screen', (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    let screenshot = require("node-server-screenshot");
-    screenshot.fromHTML("<html><body>Hello world!</body></html>", "static/test.png", function(error, pngBuffer){
-        console.log(error);
-        console.log(pngBuffer);
-        res.end('Prozhektor perestroiki \n'+error+'\n'+pngBuffer);
-        
-        //an image of the HTML has been saved at ./test.png
+
+    var webshot = require('webshot');
+    // var fs      = require('fs');
+
+    var renderStream = webshot('google.com');
+    // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
+
+    renderStream.on('data', function(data) {
+        console.log(data.toString('binary'));
+        res.end('Prozhektor perestroiki ' + data.toString('binary'));
     });
+
 
 
     // res.writeHead(200, {'Content-Type': 'text/plain'});

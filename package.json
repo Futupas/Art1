@@ -15,7 +15,7 @@
       "express": "^4.15.2",
       "canvg": "^3.0.6",
       "jsdom": "^16.2.2",
-      "node-server-screenshot": "^0.2.4"
+      "webshot": "^0.18.0"
     },
     "devDependencies": {
       "got": "^11.3.0",
