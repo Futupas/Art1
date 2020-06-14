@@ -19,13 +19,13 @@ express()
 })
 .get('/screen', (req, res) => {
     let screenshot = require("node-server-screenshot");
-    screenshot.fromHTML("<html><body>Hello world!</body></html>", "test.png", function(){
+    screenshot.fromHTML("<html><body>Hello world!</body></html>", "./static/test.png", function(){
         //an image of the HTML has been saved at ./test.png
     });
 
 
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Prozhektor perestroiki '+document.body.outerHTML);
+    res.end('Prozhektor perestroiki ');
 })
 .get('/bfff', (req, res) => {
     const jsdom = require("jsdom");
