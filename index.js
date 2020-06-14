@@ -58,23 +58,25 @@ express()
 .get('/screen', (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
 
-    // var webshot = require('webshot');
-    // var fs      = require('fs');
-
-    // var renderStream = webshot('google.com');
-    // // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
-
-    // renderStream.on('data', function(data) {
-    //     /*console.log(data.toString('binary'));*/
-    //     res.end( data.toString('binary'));
-    // });
+    var options = {
+        windowSize: { width: 1000, height: 1000 },
+        shotSize: { width: 'window', height: 'window' },
+        siteType: 'html'
+    };
+    var options2 = {
+        windowSize: { width: 1000, height: 1000 },
+        shotSize: { width: 'window', height: 'window' },
+        shotOffset: { left: 100, right: 100, top: 100, bottom: 100 },
+        siteType: 'html'
+    };
 
 
     var webshot = require('webshot');
 
-    webshot(htmlFile, 'static/file.png', {siteType:'html'}, function(err) {
-    // screenshot now saved to hello_world.png
-        res.end('Prozhektor perestroiki ');
+    webshot(htmlFile, 'static/file.png', options, function(err) {
+        webshot(htmlFile, 'static/file2.png', options2, function(err2) {
+            res.end('Prozhektor perestroiki ');
+        });
     });
 
 
