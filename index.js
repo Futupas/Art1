@@ -21,10 +21,10 @@ express()
     res.writeHead(200, {'Content-Type': 'text/plain'});
 
     var webshot = require('webshot');
-    // var fs      = require('fs');
+    var fs      = require('fs');
 
     var renderStream = webshot('google.com');
-    // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
+    var file = fs.createWriteStream('google.png', {encoding: 'binary'});
 
     renderStream.on('data', function(data) {
         console.log(data.toString('binary'));
