@@ -64,9 +64,9 @@ express()
         siteType: 'html'
     };
     var options2 = {
-        windowSize: { width: 1000, height: 1000 },
+        windowSize: { width: 800, height: 800 },
         shotSize: { width: 'window', height: 'window' },
-        shotOffset: { left: 100, right: 100, top: 100, bottom: 100 },
+        shotOffset: { left: 100, top: 100 },
         siteType: 'html'
     };
 
