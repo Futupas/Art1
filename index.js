@@ -1,3 +1,12 @@
+'use strict';
+
+let fs = require('fs');
+
+// file is included here:
+eval(fs.readFileSync('tools.js')+'');
+
+
+
 const express = require('express');
 const PORT = process.env.PORT || 5000;
 
