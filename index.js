@@ -20,15 +20,23 @@ express()
 .get('/screen', (req, res) => {
     res.writeHead(200, {'Content-Type': 'image/png'});
 
+    // var webshot = require('webshot');
+    // var fs      = require('fs');
+
+    // var renderStream = webshot('google.com');
+    // // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
+
+    // renderStream.on('data', function(data) {
+    //     console.log(data.toString('binary'));
+    //     res.end( data.toString('binary'));
+    // });
+
+
     var webshot = require('webshot');
-    var fs      = require('fs');
 
-    var renderStream = webshot('google.com');
-    // var file = fs.createWriteStream('google.png', {encoding: 'binary'});
-
-    renderStream.on('data', function(data) {
-        console.log(data.toString('binary'));
-        res.end( data.toString('binary'));
+    webshot('<html><body>Hello World</body></html>', 'static/hello_world.png', {siteType:'html'}, function(err) {
+    // screenshot now saved to hello_world.png
+    res.end('Prozhektor perestroiki ');
     });
 
 
