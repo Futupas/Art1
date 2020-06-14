@@ -18,7 +18,7 @@ express()
 })
 .get('/a', (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Prozhektor perestroiki a');
+    res.end('Prozhektor perestroiki a ' + f);
 })
 .get('/b', (req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
