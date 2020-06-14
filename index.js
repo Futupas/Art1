@@ -18,15 +18,18 @@ express()
     res.end('Prozhektor perestroiki b');
 })
 .get('/screen', (req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
     let screenshot = require("node-server-screenshot");
-    screenshot.fromHTML("<html><body>Hello world!</body></html>", "./static/test.png", function(error, pngBuffer){
+    screenshot.fromHTML("<html><body>Hello world!</body></html>", "static/test.png", function(error, pngBuffer){
         console.log(error);
         console.log(pngBuffer);
+        res.end('Prozhektor perestroiki \n'+error+'\n'+pngBuffer);
+        
         //an image of the HTML has been saved at ./test.png
     });
 
 
-    res.writeHead(200, {'Content-Type': 'text/plain'});
+    // res.writeHead(200, {'Content-Type': 'text/plain'});
     res.end('Prozhektor perestroiki ');
 })
 .get('/bfff', (req, res) => {
