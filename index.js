@@ -23,8 +23,8 @@ body{
 
 #mainsvg{
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: -100px;
+    left: -100px;
     width: 1000px;
     height: 1000px;
     background-color: #000;
@@ -59,14 +59,8 @@ express()
     res.writeHead(200, {'Content-Type': 'text/plain'});
 
     var options = {
-        windowSize: { width: 1000, height: 1000 },
-        shotSize: { width: 'window', height: 'window' },
-        siteType: 'html'
-    };
-    var options2 = {
         windowSize: { width: 800, height: 800 },
         shotSize: { width: 'window', height: 'window' },
-        shotOffset: { left: 100, top: 100 },
         siteType: 'html'
     };
 
@@ -74,9 +68,7 @@ express()
     var webshot = require('webshot');
 
     webshot(htmlFile, 'static/file.png', options, function(err) {
-        webshot(htmlFile, 'static/file2.png', options2, function(err2) {
-            res.end('Prozhektor perestroiki ');
-        });
+        res.end('Prozhektor perestroiki ');
     });
 
 
