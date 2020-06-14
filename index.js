@@ -30,7 +30,7 @@ express()
 
 
     // res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Prozhektor perestroiki ');
+    // res.end('Prozhektor perestroiki ');
 })
 .get('/bfff', (req, res) => {
     const jsdom = require("jsdom");
